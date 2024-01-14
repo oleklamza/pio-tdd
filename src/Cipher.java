@@ -6,20 +6,18 @@ public class Cipher {
     private final int alphaLength = alpha.length();
 
     public void setKey(int key) {
-        // zabezpieczenie przed ujemnymi i dużymi kluczami
         this.key = (key % alphaLength) + alphaLength;;
     }
 
     public String encrypt(String in) {
-        String out = "";
+        // StringBuilder zamiast String: wyeliminowanie konkatenacji w pętli
+        StringBuilder out = new StringBuilder();
         for (int i=0; i<in.length(); ++i) {
             int pos = alpha.indexOf(in.charAt(i));
             pos = (pos + key) % alphaLength;
-            // tu jest zgłaszany problem związany z konkatenacją w pętli;
-            // zajmiemy się tym w kolejnym etapie
-            out += alpha.charAt(pos);
+            out.append(alpha.charAt(pos));
         }
-        return out;
+        return out.toString();
     }
 
 }

@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+
+import java.util.concurrent.TimeUnit;
 
 /*
  * Testy klasy Cipher.
@@ -60,6 +63,25 @@ class CipherTest {
         cipher.setKey(-3 - 26*7);
         Assertions.assertEquals("ABC", cipher.encrypt("DEF"));
         Assertions.assertEquals("WXY", cipher.encrypt("ZAB"));
+    }
+
+    @Test
+    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
+    public void testEncryptLongTextTimeout() {
+        // Test czasu wykonania: zaszyfrowanie tekstu składającego się z 100_000 znaków
+        // nie może trwać dłużej niż 100 ms. W pierwszej implementacji metody encrypt()
+        // dochodziło do konkatenacji w pętli, co powodowało zdecydowane przekroczenie
+        // tego limitu.
+
+        // Zaczynamy od przygotowania długiego tekstu do zaszyfrowania oraz spodziewanego wyniku.
+        StringBuilder in = new StringBuilder();
+        StringBuilder expectedOut = new StringBuilder();
+        for (int i=0; i<100_000; ++i) {
+            in.append('A');
+            expectedOut.append('B');
+        }
+
+        Assertions.assertEquals(expectedOut.toString(), cipher.encrypt(in.toString()));
     }
 
 }
