@@ -35,4 +35,12 @@ class CipherTest {
         Assertions.assertEquals("YZA", cipher.encrypt("XYZ"));
     }
 
+    @Test
+    public void testSetKey3() {
+        // Test ustawiania klucza szyfrowania (przesunięcia).
+        cipher.setKey(3);
+        Assertions.assertEquals("DEF", cipher.encrypt("ABC"));
+        Assertions.assertEquals("ZAB", cipher.encrypt("WXY"));
+    }
+
 }

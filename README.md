@@ -28,7 +28,9 @@ Kolejne etapy pracy nad kodem zostały umieszczone w osobnych gałęziach:
   (metoda `encrypt(String): String`); najprostsza implementacja.
 - [etap-3](https://github.com/oleklamza/pio-tdd/tree/etap-3): Dodanie możliwości zmiany klucza szyfrującego:
   metoda `setKey(int)`.
-- [etap-4](https://github.com/oleklamza/pio-tdd/tree/etap-4): Optymalizacja czasu przetwarzania: wyeliminowanie
+- [etap-4](https://github.com/oleklamza/pio-tdd/tree/etap-4): Większa refaktoryzacja po zmianie implementacji metody
+  encrypt().  
+- [etap-5](https://github.com/oleklamza/pio-tdd/tree/etap-5): Optymalizacja czasu przetwarzania: wyeliminowanie
   kłopotliwej konkatenacji w pętli.
-- [etap-5](https://github.com/oleklamza/pio-tdd/tree/etap-5): Obsługa sytuacji typu `null` zamiast tesktu,
+- [etap-6](https://github.com/oleklamza/pio-tdd/tree/etap-6): Obsługa sytuacji typu `null` zamiast tesktu,
   nieprawiłowe znaki, puste łańcuchy.
