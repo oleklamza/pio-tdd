@@ -43,4 +43,23 @@ class CipherTest {
         Assertions.assertEquals("ZAB", cipher.encrypt("WXY"));
     }
 
+    @Test
+    public void testSetKeyNegative() {
+        // Test szyfrowania dla ujemnego klucza (przesunięcia).
+        cipher.setKey(-3);
+        Assertions.assertEquals("ABC", cipher.encrypt("DEF"));
+        Assertions.assertEquals("WXY", cipher.encrypt("ZAB"));
+    }
+
+    @Test
+    public void testSetKeyLargerThanAlphaLength() {
+        // Test szyfrowania dla klucza o wartości większej niż długość alfabetu (26).
+        cipher.setKey(3 + 26*9);
+        Assertions.assertEquals("DEF", cipher.encrypt("ABC"));
+        Assertions.assertEquals("ZAB", cipher.encrypt("WXY"));
+        cipher.setKey(-3 - 26*7);
+        Assertions.assertEquals("ABC", cipher.encrypt("DEF"));
+        Assertions.assertEquals("WXY", cipher.encrypt("ZAB"));
+    }
+
 }
