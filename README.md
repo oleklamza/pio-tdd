@@ -32,5 +32,5 @@ Kolejne etapy pracy nad kodem zostały umieszczone w osobnych gałęziach:
   `encrypt()`. Obsługa ujemnych i dużych wartości klucza szyfrującego.
 - [etap-5](https://github.com/oleklamza/pio-tdd/tree/etap-5): Optymalizacja czasu przetwarzania: wyeliminowanie
   kłopotliwej konkatenacji w pętli.
-- [etap-6](https://github.com/oleklamza/pio-tdd/tree/etap-6): Obsługa sytuacji typu `null` zamiast tesktu,
+- [etap-6](https://github.com/oleklamza/pio-tdd/tree/etap-6): Obsługa sytuacji typu `null` zamiast tekstu,
   nieprawiłowe znaki, puste łańcuchy.

@@ -10,7 +10,9 @@ public class Cipher {
     }
 
     public String encrypt(String in) {
-        // StringBuilder zamiast String: wyeliminowanie konkatenacji w pętli
+        if (in == null || (!in.matches("["+alpha+"]*"))) {
+            throw new IllegalArgumentException("Invalid text");
+        }
         StringBuilder out = new StringBuilder();
         for (int i=0; i<in.length(); ++i) {
             int pos = alpha.indexOf(in.charAt(i));

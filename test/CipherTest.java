@@ -84,4 +84,34 @@ class CipherTest {
         Assertions.assertEquals(expectedOut.toString(), cipher.encrypt(in.toString()));
     }
 
+    @Test
+    public void testEncryptTextNull() {
+        // Test sprawdzający, czy po przekazaniu null-a jako tekstu do zaszyfrowania
+        // rzucany jest wyjątek IllegalArgumentException z komunikatem "Invalid text".
+        Exception ex = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            cipher.encrypt(null);
+        });
+        Assertions.assertEquals("Invalid text", ex.getMessage());
+    }
+
+    @Test
+    public void testEncryptInvalidText() {
+        // Test sprawdzający, czy po przekazaniu tekstu zawierającego znaki spoza alfabetu
+        // rzucany jest wyjątek IllegalArgumentException z komunikatem "Invalid text".
+        Exception ex = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            cipher.encrypt("#$%");
+        });
+        Assertions.assertEquals("Invalid text", ex.getMessage());
+    }
+
+    @Test
+    public void testEmptyText() {
+        // Test sprawdzający, czy wynikiem szyfrowania pustego tekstu jest również pusty tekst.
+        // Po modyfikacji wynikającej z dwóch poprzednich testów po przekazaniu pustego
+        // łańcucha do encrypt() był rzucany wyjątek.
+        // Poprawka wymaga jedynie drobnej zmiany w wyrażeniu regularnym (linia 12 klasy Cipher):
+        // zamiast "+" (co najmniej jedno wystąpienie) trzeba dać "*" (zero lub więcej wystąpień).
+        Assertions.assertTrue(cipher.encrypt("").isEmpty());
+    }
+
 }
