@@ -5,7 +5,7 @@
 Celem jest zaimplementowanie klasy `Cipher` odpowiedzialnej za szyfrowanie tekstu metodą Cezara.
 Przyjmujemy stały alfabet 26 znaków A-Z (bez spacji). 
 Kod jest tworzony zgodnie z techniką **TDD** (ang. _Test Driven Development_), czyli napisanie
-jakiegokolwiek kawałka kodu (produkcyjnego) musi wynikać z tego, że istnieje test, kóry nie przechodzi pozytywnie.
+jakiegokolwiek kawałka kodu (produkcyjnego) musi wynikać z tego, że istnieje test, który nie przechodzi pozytywnie.
 Innymi słowy, stosujemy następujący proces:
 
 1. Piszemy test sprawdzający coś, co chcielibyśmy zaimplementować.
@@ -29,8 +29,8 @@ Kolejne etapy pracy nad kodem zostały umieszczone w osobnych gałęziach:
 - [etap-3](https://github.com/oleklamza/pio-tdd/tree/etap-3): Dodanie możliwości zmiany klucza szyfrującego:
   metoda `setKey(int)`.
 - [etap-4](https://github.com/oleklamza/pio-tdd/tree/etap-4): Większa refaktoryzacja po zmianie implementacji metody
-  encrypt(). Obsługa ujemnych i dużych wartości klucza szyfrującego.
+  `encrypt()`. Obsługa ujemnych i dużych wartości klucza szyfrującego.
 - [etap-5](https://github.com/oleklamza/pio-tdd/tree/etap-5): Optymalizacja czasu przetwarzania: wyeliminowanie
   kłopotliwej konkatenacji w pętli.
-- [etap-6](https://github.com/oleklamza/pio-tdd/tree/etap-6): Obsługa sytuacji typu `null` zamiast tesktu,
-  nieprawiłowe znaki, puste łańcuchy.
+- [etap-6](https://github.com/oleklamza/pio-tdd/tree/etap-6): Obsługa sytuacji typu `null` zamiast tekstu,
+  nieprawidłowe znaki, puste łańcuchy.
