@@ -3,6 +3,7 @@
 **Repozytorium zawiera kod z projektu prezentującego testy jednostkowe i technikę TDD.**
 
 Celem jest zaimplementowanie klasy `Cipher` odpowiedzialnej za szyfrowanie tekstu metodą Cezara.
+Przyjmujemy stały alfabet 26 znaków A-Z (bez spacji). 
 Kod jest tworzony zgodnie z techniką **TDD** (ang. _Test Driven Development_), czyli napisanie
 jakiegokolwiek kawałka kodu (produkcyjnego) musi wynikać z tego, że istnieje test, kóry nie przechodzi pozytywnie.
 Innymi słowy, stosujemy następujący proces:
